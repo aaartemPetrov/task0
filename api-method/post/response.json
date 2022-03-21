@@ -1,0 +1,24 @@
+{
+    "id": 11,
+    "name": "Name",
+    "username": "Username",
+    "email": "email@email.com",
+    "address": {
+        "street": "Pipo Lala",
+        "suite": "Apt. 0",
+        "city": "Where am i?",
+        "zipcode": "0000-0000",
+        "geo": {
+            "lat": "-337",
+            "lng": "1881"
+        }
+    },
+    "phone": "+375-44-555-35-52",
+    "website": "TheVoid.com",
+    "company": {
+        "name": "We is they.",
+        "catchPhrase": "Mother of snails",
+        "bs": "hey ho"
+    },
+    "id": 11
+}
