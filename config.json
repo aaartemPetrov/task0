@@ -1,0 +1,6 @@
+{
+    "baseUrl": "https://jsonplaceholder.typicode.com",
+    "getEndpoint": "/users",
+    "postEndpoint": "/users",
+    "deleteEndpoint": "/users/1"
+}

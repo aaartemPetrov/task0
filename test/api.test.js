@@ -11,12 +11,13 @@ const getResponseSchema = require('../api-method/get/response.schema.json');
 const postRequest = require('../api-method/post/request.json');
 const postResponse = require('../api-method/post/response.json');
 const deleteResponse = require('../api-method/delete/response.json')
+const config = require('../config.json');
 
 describe('API testing', () => {
 
     it('GET request, assert response is equal & validate response against json schema', (done) => {
         (async () => {
-            return await axios.get('https://jsonplaceholder.typicode.com/users');
+            return await axios.get(config.baseUrl + config.getEndpoint);
         })()
             .then(response => {
                     assert.jsonSchema(response.data, getResponseSchema);
@@ -30,7 +31,7 @@ describe('API testing', () => {
 
     it('POST request and assert response', (done) => { 
         (async () => {
-            return await axios.post('https://jsonplaceholder.typicode.com/users', postRequest);
+            return await axios.post(config.baseUrl + config.postEndpoint, postRequest);
         })()
             .then(response => {
                 assert.equal(JSON.stringify(response.data), JSON.stringify(postResponse));
@@ -43,7 +44,7 @@ describe('API testing', () => {
 
     it('DELETE request', (done) => {
         (async () => {
-            return await axios.delete('https://jsonplaceholder.typicode.com/users/1');
+            return await axios.delete(config.baseUrl + config.deleteEndpoint);
         })()
             .then(response => {
                 expect(response.status).to.be.equal(200);
